@@ -18,6 +18,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "chalk": "^0.5.1",
+    "cli-table": "^0.3.0",
     "commander": "^2.2.0",
     "inquirer": "^0.8.0",
     "lodash": "^2.4.1",

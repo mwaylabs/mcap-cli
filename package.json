@@ -4,7 +4,6 @@
   "description": "Commandline Interface to generate mCAP Applications",
   "main": "cli.js",
   "scripts": {
-    "start": "cli.js",
     "test": "tap test/tests/*.js"
   },
   "preferGlobal": true,
@@ -19,6 +18,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "chalk": "^0.5.1",
+    "cli-table": "^0.3.0",
     "commander": "^2.2.0",
     "lodash": "^2.4.1",
     "mcap-application-validation": "0.0.0",
@@ -37,10 +37,7 @@
   "devDependencies": {
     "mkdirp": "^0.5.0",
     "rimraf": "^2.2.8",
-    "tap": "^0.4.11",
-    "sinon": "^1.10.3"
-  },
-  "scripts": {
-    "test": "tap test/tests/*.js"
+    "sinon": "^1.10.3",
+    "tap": "^0.4.11"
   }
 }

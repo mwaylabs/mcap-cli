@@ -43,7 +43,7 @@ cli.js [options]
 ## Test
 
 ```
-tap test/*.js
+npm test
 ```
 
 [npm-url]: https://npmjs.org/package/mcap-cli

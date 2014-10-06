@@ -28,10 +28,12 @@ function welcome() {
     console.log('');
 }
 
+
 program
     .version(packageJSON.version)
     .option('info', 'Display the configuration and information')
     .option('new [name] [package]', 'generates a skeletal mCAP Application in the current directory. If no param is given a wizard will guide you.')
+    .option('server <help>', 'Help Server command')
     .option('server <list>', 'List all server')
     .option('server <add> [alias] [URI] [user] [pass]', 'Add a server configuration')
     .option('server <remove> [alias]', 'Remove a server configuration')
@@ -42,6 +44,7 @@ program
     .option('serve [alias]', 'Starts a local webserver and serves the client app with live reload. Set an alias for DataSync requests.')
     .option('generate <component>', 'Generate a mCAP Component. Available components: ' + cmdComponent.getComponentList().join(', '))
     .parse(process.argv);
+
 
 if (program.generate) {
     if (checkProject.isInsideProject(true)) {

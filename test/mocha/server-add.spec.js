@@ -12,18 +12,18 @@ describe('mcap server', function () {
 
     describe('add', function () {
 
-        var stubMcapList, stubPromt;
+        var stubMcapList, stubPromt, stubMcapRc;
         var answers = [];
         var questions = [];
 
-        var defaultConfig = {
+        var serverConfig = {
             name: 'local',
             baseUrl: 'http://localhost.de/',
             userName: 'admin',
             password: 'abc'
         };
 
-        var mcapRC = {
+        var rc = {
             default_server: '',
             server: {}
         };
@@ -37,73 +37,58 @@ describe('mcap server', function () {
             });
 
             stubMcapList = sinon.stub(mcaprc, 'list', function() {
-                return mcapRC;
+                return rc;
+            });
+
+            stubMcapRc = sinon.stub(mcaprc, 'parse', function(command, config) {
+                config.should.be.defined;
+                config.should.be.an.Array;
+                config.should.be.lengthOf(4);
+                config[0].should.equal(serverConfig.name);
+                config[1].should.equal(serverConfig.baseUrl);
+                config[2].should.equal(serverConfig.userName);
+                config[3].should.equal(serverConfig.password);
+
+                rc.default_server = serverConfig.name;
+                rc.server[serverConfig.name] = {
+                    baseurl: serverConfig.baseUrl,
+                    username: serverConfig.userName,
+                    password: serverConfig.password
+                };
             });
         });
 
         afterEach(function() {
             stubMcapList.restore();
             stubPromt.restore();
+            stubMcapRc.restore();
         });
 
         it('should add a new server', function () {
-            answers = [defaultConfig, {
+            answers = [serverConfig, {
                 addapp: 'Y'
             }];
-
-            var stubMcapRc = sinon.stub(mcaprc, 'parse', function(command, config) {
-                config.should.be.defined;
-                config.should.be.an.Array;
-                config.should.be.lengthOf(4);
-                config[0].should.equal('local');
-                config[1].should.equal('http://localhost.de/');
-                config[2].should.equal('admin');
-                config[3].should.equal('abc');
-
-                mcapRC.default_server = defaultConfig.name;
-                mcapRC.server[defaultConfig.name] = {
-                    baseurl: defaultConfig.baseUrl,
-                    username: defaultConfig.userName,
-                    password: defaultConfig.password
-                };
-            });
 
             serverAdd();
 
             questions[1][0].name.should.equal('addapp');
-
             questions.should.be.lengthOf(2);
-            Object.keys(mcapRC.server).should.be.lengthOf(1);
+            Object.keys(rc.server).should.be.lengthOf(1);
             stubMcapRc.restore();
         });
 
         it('should override an existing server', function () {
 
-            defaultConfig.password = 'cba';
-
-            answers = [defaultConfig, {
+            serverConfig.password = 'cba';
+            answers = [serverConfig, {
                 overwriteapp: 'Y'
             }];
-
-            var stubMcapRc = sinon.stub(mcaprc, 'parse', function() {
-                mcapRC.default_server = defaultConfig.name;
-                mcapRC.server[defaultConfig.name] = {
-                    baseurl: defaultConfig.baseUrl,
-                    username: defaultConfig.userName,
-                    password: defaultConfig.password
-                };
-
-                Object.keys(mcapRC.server)[0].should.equal('local');
-                mcapRC.server[defaultConfig.name].baseurl.should.equal('http://localhost.de/');
-                mcapRC.server[defaultConfig.name].username.should.equal('admin');
-                mcapRC.server[defaultConfig.name].password.should.equal('cba');
-            });
 
             serverAdd();
 
             questions[1][0].name.should.equal('overwriteapp');
             questions.should.be.lengthOf(2);
-            Object.keys(mcapRC.server).should.be.lengthOf(1);
+            Object.keys(rc.server).should.be.lengthOf(1);
 
             stubMcapRc.restore();
         });

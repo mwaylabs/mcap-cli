@@ -4,10 +4,16 @@
   "disallowSpaceBeforeBinaryOperators": [",", ":"],
   "disallowSpaceAfterBinaryOperators": ["!"],
   "requireSpaceBeforeBinaryOperators": ["?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
-  "requireSpaceAfterBinaryOperators": ["?", "+", "-", "/", "*", ":", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
+  "requireSpaceAfterBinaryOperators": ["?", "+", "/", "*", ":", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
   "disallowImplicitTypeConversion": ["string"],
   "disallowKeywords": ["with"],
   "disallowMultipleLineBreaks": true,
+  "disallowKeywordsOnNewLine": ["else"],
   "disallowTrailingWhitespace": true,
-  "requireLineFeedAtFileEnd": true
+  "requireLineFeedAtFileEnd": true,
+  "validateIndentation": 4,
+  "validateJSDoc": {
+    "checkParamNames": true,
+    "requireParamTypes": true
+  }
 }

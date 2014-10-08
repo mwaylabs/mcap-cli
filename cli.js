@@ -44,42 +44,33 @@ program
     .option('generate <component>', 'Generate a mCAP Component. Available components: ' + cmdComponent.getComponentList().join(', '))
     .parse(process.argv);
 
-
 if (program.generate) {
     if (checkProject.isInsideProject(true)) {
         cmdComponent.generate(program.generate);
     }
-}
-else if (program.info) {
+} else if (program.info) {
     commandInfo();
-}
-else if (program.new) {
+} else if (program.new) {
     cmdNew(program.new === true ? program.new : program);
-}
-else if (program.server) {
+} else if (program.server) {
     cmdServer(program);
-}
-else if (program.publish) {
+} else if (program.publish) {
     if (checkProject.isInsideProject(true)) {
         cmdPublish.publish(program);
     }
-}
-else if (program.serve) {
+} else if (program.serve) {
     if (checkProject.isInsideProject(true)) {
         cmdServe.serve(program);
     }
-}
-else if (program.log) {
+} else if (program.log) {
     if (checkProject.isInsideProject(true)) {
         cmdLog(program);
     }
-}
-else if (program.deploy) {
+} else if (program.deploy) {
     if (program.args[0] || checkProject.isInsideProject(true)) {
         cmdDeploy.deploy(program);
     }
-}
-else {
+} else {
     welcome();
     program.help();
 }

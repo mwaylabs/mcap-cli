@@ -6,7 +6,7 @@ var path = require('path');
 var program = require('commander');
 var cmdComponent = require('./lib/command/component');
 var cmdNew = require('./lib/command/new');
-var cmdServer = require('./lib/command/newserver');
+var cmdServer = require('./lib/command/server');
 var cmdDeploy = require('./lib/command/deploy');
 var cmdServe = require('./lib/command/serve');
 var cmdPublish = require('./lib/command/publish');
@@ -28,16 +28,15 @@ function welcome() {
     console.log('');
 }
 
-
 program
     .version(packageJSON.version)
     .option('info', 'Display the configuration and information')
     .option('new [name] [package]', 'generates a skeletal mCAP Application in the current directory. If no param is given a wizard will guide you.')
     .option('server <help>', 'Help Server command')
     .option('server <list>', 'List all server')
-    .option('server <add> [alias] [URI] [user] [pass]', 'Add a server configuration')
-    .option('server <remove> [alias]', 'Remove a server configuration')
-    .option('server <default> [alias]', 'Set a default Server')
+    .option('server <add>', 'Add a server configuration')
+    .option('server <remove>', 'Remove a server configuration')
+    .option('server <default>', 'Set a default Server')
     .option('log [alias]', 'Live logger of the given server')
     .option('deploy [alias] [path]', 'Deploy the application to the given server')
     .option('publish [alias] [releaseStatus] [archivationMode]', 'Publish the Client Application to Relution. Defaults: releaseStatus: DEVELOPMENT archivationMode: archive')

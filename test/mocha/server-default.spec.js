@@ -48,8 +48,6 @@ describe('mcap server', function () {
             stubMcapList.restore();
         });
 
-
-
         it('should add a default server', function () {
             answer = {newDefault:'localMcap'};
             var stubMcapRc = sinon.stub(mcaprc, 'setDefault', function(config) {
@@ -58,10 +56,14 @@ describe('mcap server', function () {
             });
 
             serverDefault.createDefault();
+            
             questions[0].name.should.equal('newDefault');
+            mcapRC.default_server.should.equal(answer.newDefault);
+
             stubMcapRc.restore();
             mcapRC = {default_server:'',server:{}};
         });
+
         it('should cant add a default server', function () {
             serverDefault.createDefault();
             mcapRC = {

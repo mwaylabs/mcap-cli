@@ -1,9 +1,11 @@
 {
    "default": "test",
-   "test": {
-      "baseurl": "http://localhost",
-      "username": "test",
-      "password": "test",
-      "endpoint": "/my/awesome/endpoint"
+   "server":{
+     "test": {
+       "baseurl": "http://localhost",
+       "username": "test",
+       "password": "test",
+       "endpoint": "/my/awesome/endpoint"
+     }
    }
 }

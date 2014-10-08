@@ -70,7 +70,7 @@ describe('mcap server', function () {
         /**
          * @type {string[]}
          */
-        var deleteServer = [ 'losscalMcaps', 'localMcaps', 'localMcap' ];
+        var deleteServer = [ 'losscalMcaps', 'localMcaps' ];
         /**
          * @type {string[]}
          */
@@ -99,7 +99,7 @@ describe('mcap server', function () {
             });
             serverRemove();
             questions[ 0 ].name.should.equal('server');
-            Object.keys(mcapRC.server).length.should.equal(2);
+            Object.keys(mcapRC.server).length.should.equal(3);
             mcapRC.default_server.should.equal('local');
             removeServersRc.restore();
         });
@@ -111,9 +111,9 @@ describe('mcap server', function () {
                 delete mcapRC.server[ name ];
             });
             var defaultRC = sinon.stub(mcaprc, 'setDefault', function (config) {
-                console.log('config',config);
+//                console.log('config',config);
                 mcapRC.default_server = config;
-                console.log(mcapRC);
+//                console.log(mcapRC);
                 return true;
             });
 

@@ -1,16 +1,14 @@
 /**
  * Created by pascalbrewing on 08/10/14.
  */
-var sinon = require('sinon');
-var inquirer = require('inquirer');
-var mcaprc = require('mcaprc');
-var _ = require('lodash');
+var sinon       = require('sinon');
+var inquirer    = require('inquirer');
+var mcaprc      = require('mcaprc');
+var _           = require('lodash');
 require('should');
 var serverRemove = require('../../lib/command/server/remove.js');
-
 describe('mcap server', function () {
     describe('remove', function () {
-
         /**
          * @type {{default_server: string, server: {local: {baseurl: string, username: string, password: string},
          *   localMcap: {baseurl: string, username: string, password: string}, localMcappps: {baseurl: string,
@@ -75,7 +73,6 @@ describe('mcap server', function () {
          * @type {string[]}
          */
         var deleteServerWithDefault = [ 'local','losscalMcaps', 'localMcaps' ];
-
         beforeEach(function () {
             stubPrompt = sinon.stub(inquirer, 'prompt', function (question, cb) {
                 questions = question;
@@ -86,12 +83,10 @@ describe('mcap server', function () {
                 return mcapRC = _.assign(raw,mcapRC);
             });
         });
-
         afterEach(function () {
             stubPrompt.restore();
             stubMcapList.restore();
         });
-
         /**
          * remove some server from the list
          */
@@ -106,11 +101,9 @@ describe('mcap server', function () {
             mcapRC.default_server.should.equal('local');
             removeServersRc.restore();
         });
-
         /**
          * remove some server and the default server too to add a new default server
          */
-
         it("should remove some server with default", function () {
             answers = [ { server: deleteServerWithDefault }, { newDefault: 'localMcap' } ];
             var removeServersRc = sinon.stub(mcaprc, 'remove', function (name) {
@@ -120,7 +113,6 @@ describe('mcap server', function () {
                 mcapRC.default_server = config;
                 return true;
             });
-
             serverRemove();
             questions[0].name.should.equal('newDefault');
             Object.keys(mcapRC.server).length.should.equal(2);
@@ -128,7 +120,6 @@ describe('mcap server', function () {
             removeServersRc.restore();
             defaultRC.restore();
         });
-
         /**
          * remove all server from tghe list
          */
@@ -142,7 +133,6 @@ describe('mcap server', function () {
                 mcapRC.default_server = '';
                 return true;
             });
-
             serverRemove();
             questions[ 0 ].name.should.equal('server');
             Object.keys(mcapRC.server).length.should.equal(0);

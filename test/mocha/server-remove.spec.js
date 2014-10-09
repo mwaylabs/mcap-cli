@@ -90,10 +90,11 @@ describe('mcap server', function () {
         afterEach(function () {
             stubPrompt.restore();
             stubMcapList.restore();
-//            mcapRC = _.clone(raw);
-//            console.log(mcapRC);
         });
 
+        /**
+         * remove some server from the list
+         */
         it("should remove some server", function () {
             answers = [ { server: deleteServer } ];
             var removeServersRc = sinon.stub(mcaprc, 'remove', function (name) {
@@ -105,6 +106,10 @@ describe('mcap server', function () {
             mcapRC.default_server.should.equal('local');
             removeServersRc.restore();
         });
+
+        /**
+         * remove some server and the default server too to add a new default server
+         */
 
         it("should remove some server with default", function () {
             answers = [ { server: deleteServerWithDefault }, { newDefault: 'localMcap' } ];
@@ -122,23 +127,28 @@ describe('mcap server', function () {
             mcapRC.default_server.should.equal('localMcap');
             removeServersRc.restore();
             defaultRC.restore();
-            console.log(mcapRC);
         });
-        
+
+        /**
+         * remove all server from tghe list
+         */
         it("should remove all server", function () {
             answers = [ { server: ['all'] } ];
             var removeServersRc = sinon.stub(mcaprc, 'remove', function (name) {
                 delete mcapRC.server[ name ];
             });
+
             var defaultRC = sinon.stub(mcaprc, 'setDefault', function (config) {
                 mcapRC.default_server = '';
                 return true;
             });
+
             serverRemove();
             questions[ 0 ].name.should.equal('server');
             Object.keys(mcapRC.server).length.should.equal(0);
             mcapRC.default_server.should.equal('');
             removeServersRc.restore();
+            defaultRC.restore();
         });
     });
 });

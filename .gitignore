@@ -10,3 +10,4 @@ bower_components
 !/test/.mcaprc
 test/tmp
 coverage/
+atlassian-ide-plugin.xml

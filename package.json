@@ -27,7 +27,7 @@
     "mcap-deploy": "~0.2.0",
     "mcap-generator-ionic": "~0.14.0",
     "mcap-logger": "~0.0.0",
-    "mcap-serve": "~0.2.0",
+    "mcap-serve": "~0.1.0",
     "mcaprc": "~1.0.0",
     "progress-bar": "^0.1.1",
     "promzard": "^0.2.2",

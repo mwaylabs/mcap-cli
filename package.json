@@ -4,7 +4,7 @@
   "description": "Commandline Interface to generate mCAP Applications",
   "main": "cli.js",
   "scripts": {
-    "test": "tap test/tests/*.js"
+    "test": "tap test/tests/*.js && gulp test"
   },
   "preferGlobal": true,
   "bin": {

@@ -11,7 +11,8 @@
   "disallowKeywordsOnNewLine": ["else"],
   "disallowTrailingWhitespace": true,
   "requireLineFeedAtFileEnd": true,
-  "validateIndentation": 4,
+  "validateIndentation": 2,
+  "validateQuoteMarks": "'",
   "validateJSDoc": {
     "checkParamNames": true,
     "requireParamTypes": true

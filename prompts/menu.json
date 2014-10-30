@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Create a new project",
+    "value": {
+      "method": "_createProject"
+    }
+  },
+  {
+    "name": "Find some help",
+    "value": {
+      "method": "_findHelp"
+    }
+  },
+  {
+    "name": "Server commands",
+    "value": {
+      "method": "_server"
+    }
+  },
+  {
+    "name": "Get me out of here!",
+    "value": {
+      "method": "_noop"
+    }
+  }
+]

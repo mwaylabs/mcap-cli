@@ -6,7 +6,7 @@ var sinon = require('sinon');
 var inquirer = require('inquirer');
 var mcaprc = require('mcaprc');
 require('should');
-var serverAdd = require('../../commands/server/add.js');
+var serverAdd = require('../../lib/commands/server/add.js');
 
 describe('mcap server', function () {
 

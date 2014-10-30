@@ -3,43 +3,48 @@
 'use strict';
 
 var path = require('path');
-var env = require('yeoman-environment').createEnv();
+var _ = require('lodash');
 var nopt = require('nopt');
-var mctCore = require('mct-core');
+var eventBus = require('./lib/util/eventbus.js');
+var commands = require('./lib/commands');
 
-var opts = nopt();
-var args = opts.argv.remain;
-var cmd = args.shift();
-var server = require('./commands/server');
 var options = {
   debug: true
 };
 
-env.on('end', function () {
-  console.log('Done running sir');
-});
+var opts = nopt();
+var args = opts.argv.remain;
+var cmd = args.shift();
 
-env.on('error', function (err) {
-  console.error('Error', process.argv.slice(2).join(' '), '\n');
-  console.error(options.debug ? err.stack : err.message);
-});
+// Setup the commands and register the listiners
+commands();
 
-env.lookup(function () {
-  if (!cmd) {
-    env.register(path.resolve(__dirname, './cli-menu'), 'menu');
+if (!cmd) {
+
+  // Register the `home generator.
+  var env = require('yeoman-environment').createEnv();
+  env.on('end', function () {
+    console.log('Done running sir');
+  });
+
+  env.on('error', function (err) {
+    console.error('Error', process.argv.slice(2).join(' '), '\n');
+    console.error(options.debug ? err.stack : err.message);
+  });
+
+  env.lookup(function() {
+    env.register(path.resolve(__dirname, './lib/menu'), 'menu');
     env.run(['menu'], {});
-  }
+  });
 
-  if(cmd === 'server'){
-    server(args);
-  }
+} else {
 
-  if (cmd === 'new') {
-    var options = {};
-    if (args[0]) {
-      options.name = args[0];
-    }
-    mctCore.createProject.run(options);
-  }
+  // cli is called with a short hand like `mcap new`
+  var data = {
+    cmd: cmd,
+    args: opts.argv.remain,
+    opts: _.omit(opts, 'argv')
+  };
 
-});
+  eventBus.emit(eventBus.CMD_EVENT, data);
+}

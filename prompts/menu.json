@@ -12,15 +12,15 @@
     }
   },
   {
-    "name": "Get me out of here!",
+    "name": "Server commands",
     "value": {
-      "method": "_noop"
+      "method": "_server"
     }
   },
   {
-    "name": "server",
+    "name": "Get me out of here!",
     "value": {
-      "method": "_server"
+      "method": "_noop"
     }
   }
 ]

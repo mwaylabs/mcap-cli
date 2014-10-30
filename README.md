@@ -28,7 +28,7 @@ Legend
 ===
 - mcap is always needed
 - yo === yeoman global
-- <% generator %> at the moment we have to available choices "m" or "server"
+- <% generator %> at the moment we have two available choices "m" or "server"
   yo:m view
   yo:server endpoint
 - <% state %> is optional client or server

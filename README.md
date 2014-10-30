@@ -20,6 +20,7 @@ npm link
 
 Just run `mcap` in your command line
 
+
 Commands
 ====
 
@@ -32,12 +33,17 @@ Legend
   yo:server endpoint
 - <state> is optional client or server
 
+##CLI
+````
+  // create a model in client and server
+  mcap model <modelname>
+  mcap server
+  mcap new
+````
+
 ##Yo
 ````
-  mcap
-  mcap new <projectname>
-  
-  //create a view in your client folder
+   //create a view in your client folder
   mcap yo:<generator> view <view name>
   
   //create an Endpoint to your server folder
@@ -62,13 +68,7 @@ mcap gulp
  
 ````
 
-##CLI
-````
-  // create a model in client and server
-  mcap model <modelname>
-  mcap server
-  mcap new
-````
+
 
 ##Generator
 

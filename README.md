@@ -20,7 +20,7 @@ npm link
 
 Just run `mcap` in your command line
 
-
+![mcap](https://lh3.googleusercontent.com/D7Vz2DFVRk3LCbjrCmVIKcY0qLG7jxIvPVgcd24x5SPt2YXGhot3Job0qkRr39ioU0yqig=w1896-h914)
 Commands
 ====
 

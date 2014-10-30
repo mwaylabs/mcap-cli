@@ -17,13 +17,16 @@
   "dependencies": {
     "debug": "2.1.0",
     "fullname": "^1.0.0",
+    "gulp-mocha": "^1.1.1",
     "mct-core": "^0.1.0",
     "nopt": "^3.0.1",
     "opn": "^1.0.0",
+    "should": "^4.1.0",
     "yeoman-environment": "^1.0.2",
     "yeoman-generator": "^0.17.7"
   },
   "devDependencies": {
+    "cli-table": "^0.3.1",
     "coveralls": "^2.11.1",
     "gulp": "^3.8.8",
     "gulp-bump": "^0.1.11",
@@ -34,7 +37,8 @@
     "gulp-mocha": "^1.1.0",
     "gulp-plumber": "^0.6.5",
     "gulp-util": "^3.0.1",
-    "jshint-stylish": "^0.4.0"
+    "jshint-stylish": "^0.4.0",
+    "sinon": "^1.11.1"
   },
   "scripts": {
     "coveralls": "gulp test && cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",

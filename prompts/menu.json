@@ -16,5 +16,11 @@
     "value": {
       "method": "_noop"
     }
+  },
+  {
+    "name": "server",
+    "value": {
+      "method": "_server"
+    }
   }
 ]

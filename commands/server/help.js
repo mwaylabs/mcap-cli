@@ -1,3 +1,4 @@
+'use strict';
 var chalk = require('chalk');
 var Table = require('cli-table');
 var behavior = require('./behavior');

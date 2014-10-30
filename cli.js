@@ -10,7 +10,7 @@ var mctCore = require('mct-core');
 var opts = nopt();
 var args = opts.argv.remain;
 var cmd = args.shift();
-
+var server = require('./commands/server');
 var options = {
   debug: true
 };
@@ -28,6 +28,10 @@ env.lookup(function () {
   if (!cmd) {
     env.register(path.resolve(__dirname, './cli-menu'), 'menu');
     env.run(['menu'], {});
+  }
+
+  if(cmd === 'server'){
+    server(args);
   }
 
   if (cmd === 'new') {

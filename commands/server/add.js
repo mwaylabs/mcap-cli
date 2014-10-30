@@ -2,7 +2,6 @@
  * Created by pascalbrewing on 08/10/14.
  */
 'use strict';
-
 var inquirer = require('inquirer');
 var serverconfig = require('mcaprc');
 var chalk = require('chalk');

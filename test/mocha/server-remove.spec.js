@@ -6,7 +6,7 @@ var inquirer    = require('inquirer');
 var mcaprc      = require('mcaprc');
 var _           = require('lodash');
 require('should');
-var serverRemove = require('../../commands/server/remove.js');
+var serverRemove = require('../../lib/commands/server/remove.js');
 describe('mcap server', function () {
     describe('remove', function () {
         /**

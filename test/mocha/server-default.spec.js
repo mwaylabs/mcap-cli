@@ -5,7 +5,7 @@ var sinon = require('sinon');
 var inquirer = require('inquirer');
 var mcaprc = require('mcaprc');
 require('should');
-var serverDefault = require('../../commands/server/default.js');
+var serverDefault = require('../../lib/commands/server/default.js');
 
 describe('mcap server', function () {
   describe('default', function () {

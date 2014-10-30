@@ -5,6 +5,7 @@ var gen = require('yeoman-generator');
 var opn = require('opn');
 var fullname = require('fullname');
 var mctCore = require('mct-core');
+var defaultChoices = require('prompts/menu.json');
 
 // The `menu` generator provides users with a few common, helpful commands.
 var Generator = module.exports = function () {
@@ -55,23 +56,6 @@ Generator.prototype.home = function (options) {
   var done = this.async();
 
   options = options || {};
-
-  var defaultChoices = [{
-    name: 'Create a new project',
-    value: {
-      method: '_createProject'
-    }
-  }, {
-    name: 'Find some help',
-    value: {
-      method: '_findHelp'
-    }
-  }, {
-    name: 'Get me out of here!',
-    value: {
-      method: '_noop'
-    }
-  }];
 
   fullname(function (err, name) {
     if (err) {

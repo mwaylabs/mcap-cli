@@ -93,7 +93,7 @@ function _cleanUpServerList(list) {
 function removeServer() {
     var list = serverconfig.list();
     if ( Object.keys(list.server).length <= 0 ) {
-        console.log(chalk.blue(figures.info), chalk.green('Your Server list is empty plz use "' + chalk.underline("mcap server add") + '" before'), figures.ellipsis);
+        console.log(chalk.cyan(figures.info), chalk.green('Your Server list is empty plz use "' + chalk.underline("mcap server add") + '" before'), figures.ellipsis);
         return false;
     }
     var serverKeys = _cleanUpServerList(_.keys(list[ 'server' ]));

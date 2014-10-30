@@ -6,23 +6,21 @@
 var serverconfig = require('mcaprc');
 /**
  * switch server command
- * @param {object} program
+ * @param {object} args
  */
-function server(program) {
-  console.log('args', program);
-  if(program.length > 0){
-    switch ( program[0] ) {
+function server(args) {
+    switch ( args[0] ) {
       case 'add':
         var addTask = require('./server/add');
-        addTask(program);
+        addTask(args);
         break;
       case 'default':
         var defaultTask = require('./server/default');
-        defaultTask.createDefault(program);
+        defaultTask.createDefault(args);
         break;
       case 'remove':
         var removeTask = require('./server/remove');
-        removeTask(program);
+        removeTask(args);
         break;
       case 'list':
         var listTask = require('./server/behavior');
@@ -33,6 +31,5 @@ function server(program) {
         helperTask();
         break;
     }
-  }
 }
 module.exports = server;

@@ -37,6 +37,7 @@
     "gulp-mocha": "^1.1.0",
     "gulp-plumber": "^0.6.5",
     "gulp-util": "^3.0.1",
+    "inquirer": "^0.8.0",
     "jshint-stylish": "^0.4.0",
     "sinon": "^1.11.1"
   },

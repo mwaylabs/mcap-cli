@@ -37,6 +37,7 @@ function setNewDefaultServer() {
       if ( answer.newDefault ) {
         var promise = serverconfig.setDefault(answer.newDefault);
         if ( promise ) {
+          console.log(chalk.cyan(answer.newDefault)+' '+chalk.green('is set as default'));
           return behavior.displayTable(serverconfig.list());
         } else {
           console.log(chalk.bgRed(chalk.yellow(figures.warning), chalk.white('Something went wrong on setting Default Server. ')));
@@ -58,9 +59,8 @@ function createDefault() {
 
   if ( Object.keys(list[ 'server' ]).length > 1 ) {
     setNewDefaultServer();
-
   } else {
-    console.log(chalk.blue(figures.info), chalk.green('Your Server is always set as default'), figures.ellipsis);
+    console.log(chalk.blue(figures.info)+' '+chalk.green('Your Server is always set as default')+' '+figures.ellipsis);
   }
 }
 

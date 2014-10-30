@@ -30,7 +30,7 @@ if (!cmd) {
   });
 
   env.lookup(function() {
-    env.register(path.resolve(__dirname, './cli-menu'), 'menu');
+    env.register(path.resolve(__dirname, './lib/menu'), 'menu');
     env.run(['menu'], {});
   });
 

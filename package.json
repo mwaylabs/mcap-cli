@@ -17,6 +17,7 @@
   "dependencies": {
     "debug": "2.1.0",
     "fullname": "^1.0.0",
+    "lodash": "^2.4.1",
     "mct-core": "^0.1.0",
     "nopt": "^3.0.1",
     "opn": "^1.0.0",

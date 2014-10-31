@@ -38,6 +38,8 @@ Legend
   // create a model in client and server
   mcap model <modelname>
   mcap server
+  mcap deploy 
+  mcap deploy <servername>
   mcap new
 ````
 

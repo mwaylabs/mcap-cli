@@ -24,6 +24,7 @@
     "mct-core": "^0.1.0",
     "nopt": "^3.0.1",
     "opn": "^1.0.0",
+    "progress-bar": "^0.1.1",
     "should": "^4.1.0",
     "yeoman-environment": "^1.1.1",
     "yeoman-generator": "^0.17.7"

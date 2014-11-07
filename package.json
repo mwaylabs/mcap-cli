@@ -43,8 +43,6 @@
     "gulp-util": "^3.0.1",
     "inquirer": "^0.8.0",
     "jshint-stylish": "^0.4.0",
-    "mcap-application-validation": "0.0.0",
-    "mcap-deploy": "^0.2.0",
     "progress-bar": "^0.1.1",
     "sinon": "^1.11.1"
   },

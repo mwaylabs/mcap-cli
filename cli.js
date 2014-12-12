@@ -6,7 +6,6 @@ var path = require('path');
 var _ = require('lodash');
 var nopt = require('nopt');
 var eventBus = require('./lib/util/eventbus.js');
-// var commands = require('./lib/commands');
 
 var options = {
   debug: true
@@ -23,21 +22,22 @@ var data = {
   opts: _.omit(opts, 'argv')
 };
 
-// Setup the commands and register the listiners
-//commands();
-
-// Register the `home generator.
+// Register the home generator.
 var env = require('yeoman-environment').createEnv();
 env.on('end', function () {
   console.log('Done running sir');
 });
 
+
+// Catch errors from triggerd by home generator
 env.on('error', function (err) {
   console.error('Error', process.argv.slice(2).join(' '), '\n');
   console.error(options.debug ? err.stack : err.message);
 });
 
 env.lookup(function() {
+
+  // Register home generator
   env.register(path.resolve(__dirname, './lib/menu'), 'menu');
 
   args.unshift('menu');

@@ -1,15 +1,12 @@
 Usage: mcap [--version] [--help] [--loglevel=<level>]
 
-The most commonly used git commands are:
+The most commonly used mcap commands are:
 
-  new          Create a new mCAP project
-
+  new           # Create a new mCAP project
+  help          # Show helpful resources to work with the mCAP
   server
-    add         Add a new server
-    remove      Remove a specific server
-    list        Show all configured servers
-
+    add         # Add a new server
+    remove      # Remove a specific server
+    list        # Show all configured servers
   component
-    model       Add a new model
-
-  help          Show helpful resources to work with the mCAP
+    model       # Add a new model

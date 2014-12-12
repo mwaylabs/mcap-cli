@@ -8,43 +8,47 @@ Commandline Interface to generate mCAP Applications
 ## Install
 
 ```
-git clone https://github.com/mwaylabs/mcap-cli.git
+git clone -b master git@github.com:mwaylabs/mcap-cli.git
 cd mcap-cli
 npm link
 ```
+
+## Update
+
+To get the latest updates run `npm update` in the `mcap-cli` directory.
+
 
 
 ## Usage
 
 Just run `mcap` in your command line
 
-Commands
-====
 
-Legend
-===
-- mcap is always needed
-- yo === yeoman global
-- <% generator %> at the moment we have two available choices "m" or "server"
-  yo:m view
-  yo:server endpoint
-- <% state %> is optional client or server
 
-##CLI
-````
-  // create a model in client and server
-  mcap model <modelname>
-  mcap server
-  mcap deploy
-  mcap deploy <servername>
-  mcap new
-````
+### Commands
+
+Usage:
+```
+mcap [--version] [--help] [--loglevel=<level>]
+```
+
+The most commonly used mcap commands are:
+```
+new           # Create a new mCAP project
+help          # Show helpful resources to work with the mCAP
+server
+  add         # Add a new server
+  remove      # Remove a specific server
+  list        # Show all configured servers
+component
+  model       # Add a new model
+```
+
+
 
 ## Debug
 
-By setting the loglevel, you can easily follow the programm flow.
-
-The levels are: trace, debug, info, warn, error, and fatal.
+By setting the loglevel, you can easily follow the programm flow. The levels are: trace, debug, info, warn, error, and fatal.
 
 - "fatal" (60): The service/app is going to stop or become unusable now. An operator should definitely look into this soon.
 - "error" (50): Fatal for a particular request, but the service/app continues servicing other requests. An operator should look at this soon(ish).
@@ -57,18 +61,21 @@ The levels are: trace, debug, info, warn, error, and fatal.
 mcap <command> --loglevel=trace
 ```
 
+
+
 ##Yo
 
 > This feature is not implemented yet
 
 ````
-   //create a view in your client folder
-  mcap yo:<generator> view <view name>
+//create a view in your client folder
+mcap yo:<generator> view <view name>
 
-  //create an Endpoint to your server folder
-  mcap yo:server endpoint <endpoint name>
-
+//create an Endpoint to your server folder
+mcap yo:server endpoint <endpoint name>
 ````
+
+
 
 ##Gulp
 
@@ -79,22 +86,16 @@ mcap <command> --loglevel=trace
 mcap gulp
 
 //start gulp default on state
- mcap gulp:<state>
+mcap gulp:<state>
 
- //start gulp <task> on client and server
- mcap gulp watch
+//start gulp <task> on client and server
+mcap gulp watch
 
- //start gulp:<state> <task> on client
- mcap gulp:client watch
+//start gulp:<state> <task> on client
+mcap gulp:client watch
 
 ````
 
-
-
-##Generator
-
-- generator-m https://github.com/mwaylabs/generator-m
-- generator-m-server https://github.com/mwaylabs/generator-m-server
 
 
 ##License

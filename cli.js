@@ -3,9 +3,7 @@
 'use strict';
 
 var path = require('path');
-var _ = require('lodash');
 var nopt = require('nopt');
-var eventBus = require('./lib/util/eventbus.js');
 
 var options = {
   debug: true
@@ -13,21 +11,12 @@ var options = {
 
 var opts = nopt();
 var args = opts.argv.remain;
-var cmd = args[0];
-
-// cli is called with a short hand like `mcap new`
-var data = {
-  cmd: cmd,
-  args: args,
-  opts: _.omit(opts, 'argv')
-};
 
 // Register the home generator.
 var env = require('yeoman-environment').createEnv();
 env.on('end', function () {
   console.log('Done running sir');
 });
-
 
 // Catch errors from triggerd by home generator
 env.on('error', function (err) {
@@ -40,7 +29,9 @@ env.lookup(function() {
   // Register home generator
   env.register(path.resolve(__dirname, './lib/menu'), 'menu');
 
+  // Add the generator name so yeoman knows what we want to do.
   args.unshift('menu');
+
+  // Start the generator
   env.run(args, opts);
-  eventBus.emit(eventBus.CMD_EVENT, data);
 });

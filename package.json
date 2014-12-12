@@ -22,7 +22,7 @@
     "lodash": "^2.4.1",
     "mcap-log": "^0.1.1",
     "mcaprc": "^1.0.0",
-    "mct-core": "^0.1.0",
+    "mct-core": "mwaylabs/mct-core",
     "nopt": "^3.0.1",
     "opn": "^1.0.0",
     "progress-bar": "^0.1.1",

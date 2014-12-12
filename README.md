@@ -10,17 +10,14 @@ Commandline Interface to generate mCAP Applications
 ```
 git clone https://github.com/mwaylabs/mcap-cli.git
 cd mcap-cli
-npm install
 npm link
 ```
-
 
 
 ## Usage
 
 Just run `mcap` in your command line
 
-![mcap](https://lh3.googleusercontent.com/D7Vz2DFVRk3LCbjrCmVIKcY0qLG7jxIvPVgcd24x5SPt2YXGhot3Job0qkRr39ioU0yqig=w1896-h914)
 Commands
 ====
 
@@ -38,7 +35,7 @@ Legend
   // create a model in client and server
   mcap model <modelname>
   mcap server
-  mcap deploy 
+  mcap deploy
   mcap deploy <servername>
   mcap new
 ````
@@ -61,16 +58,21 @@ mcap <command> --loglevel=trace
 ```
 
 ##Yo
+
+> This feature is not implemented yet
+
 ````
    //create a view in your client folder
   mcap yo:<generator> view <view name>
-  
+
   //create an Endpoint to your server folder
   mcap yo:server endpoint <endpoint name>
-  
+
 ````
 
 ##Gulp
+
+> This feature is not implemented yet
 
 ````
 //start gulp default task client and server task
@@ -78,13 +80,13 @@ mcap gulp
 
 //start gulp default on state
  mcap gulp:<state>
- 
+
  //start gulp <task> on client and server
  mcap gulp watch
- 
+
  //start gulp:<state> <task> on client
  mcap gulp:client watch
- 
+
 ````
 
 

@@ -4,6 +4,7 @@ The most commonly used mcap commands are:
 
   new           # Create a new mCAP project
   help          # Show helpful resources to work with the mCAP
+  logger        # Open a logger connection to get log from remote
   server
     add         # Add a new server
     remove      # Remove a specific server

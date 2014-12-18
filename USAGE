@@ -2,13 +2,14 @@ Usage: mcap [--version] [--help] [--loglevel=<level>]
 
 The most commonly used mcap commands are:
 
-  new                 # Create a new mCAP project
-  help                # Show helpful resources to work with the mCAP
-  logger <loglevel>   # Open a logger connection to get log from remote
-                      # The loglevels are: trace, debug, info, warn, error and fatal
+  new                          # Create a new mCAP project
+  help                         # Show helpful resources to work with the mCAP
+  deploy <server>              # Deploy's the current project to the selected mCAP
+  logger <server> <loglevel>   # Open a logger connection to get log from remote
+                               # The loglevels are: trace, debug, info, warn, error and fatal
   server
-    add               # Add a new server
-    remove            # Remove a specific server
-    list              # Show all configured servers
+    add                        # Add a new server
+    remove                     # Remove a specific server
+    list                       # Show all configured servers
   component
-    model             # Add a new model
+    model                      # Add a new model

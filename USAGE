@@ -13,3 +13,4 @@ The most commonly used mcap commands are:
     list                       # Show all configured servers
   component
     model                      # Add a new model
+    connection                 # Add a new connection

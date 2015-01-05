@@ -8,6 +8,8 @@ Commandline Interface to generate mCAP Applications
 ## Install
 
 ```
+gem install sass -v 3.4.5
+bower i -g
 git clone -b master git@github.com:mwaylabs/mcap-cli.git
 cd mcap-cli
 npm link

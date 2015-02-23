@@ -10,7 +10,7 @@ Commandline Interface to generate mCAP Applications
 ```
 gem install sass -v 3.4.5
 bower i -g
-git clone -b master git@github.com:mwaylabs/mcap-cli.git
+git clone -b master https://github.com/mwaylabs/mcap-cli
 cd mcap-cli
 npm link
 ```

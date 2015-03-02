@@ -6,10 +6,15 @@ Commandline Interface to generate mCAP Applications
 
 
 ## Install
+The following tools are Required plz read the installation instructions
+
+[git](http://git-scm.com/),
+[node, npm](https://docs.npmjs.com/getting-started/installing-node),
+[bower](http://bower.io/#install-bower), [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md),
+[yeoman](http://yeoman.io/learning/index.html),
+[sass](http://sass-lang.com/install)
 
 ```
-gem install sass -v 3.4.5
-npm install -g bower
 git clone -b master https://github.com/mwaylabs/mcap-cli
 cd mcap-cli
 npm link

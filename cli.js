@@ -4,7 +4,7 @@
 
 var path = require('path');
 var nopt = require('nopt');
-
+var menuPath = path.resolve(__dirname, './lib/menu.js');
 var options = {
   debug: true
 };
@@ -27,7 +27,8 @@ env.on('error', function (err) {
 env.lookup(function() {
 
   // Register home generator
-  env.register(path.resolve(__dirname, './lib/menu'), 'menu');
+
+  env.register(menuPath, 'menu');
 
   // Add the generator name so yeoman knows what we want to do.
   args.unshift('menu');

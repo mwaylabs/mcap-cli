@@ -1,7 +1,7 @@
 {
   "name": "mcap-cli",
   "description": "Commandline Interface to generate mCAP Applications",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "homepage": "https://github.com/mwaylabs/mcap-cli",
   "bugs": "https://github.com/mwaylabs/mcap-cli/issues",
   "license": "MIT",

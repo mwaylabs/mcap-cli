@@ -1,0 +1,26 @@
+{
+   "name": "To2do",
+   "label": "Todo",
+   "attributes": {
+      "title": {
+         "type": "String",
+         "mandatory": true,
+         "key": false
+      },
+      "order": {
+         "type": "Integer",
+         "mandatory": false,
+         "key": false
+      },
+      "completed": {
+         "type": "Boolean",
+         "mandatory": false,
+         "key": false
+      },
+      "_id": {
+         "type": "String",
+         "mandatory": true,
+         "key": true
+      }
+   }
+}

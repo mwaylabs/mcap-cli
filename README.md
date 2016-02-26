@@ -107,7 +107,7 @@ mcap gulp:client watch
 
 ##License
 
-Copyright (c) 2014 M-Way Solutions GmbH. Licensed under the MIT license.
+Copyright (c) 2014-present, M-Way Solutions GmbH. Licensed under the MIT license.
 
 
 

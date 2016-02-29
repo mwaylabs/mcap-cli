@@ -19,7 +19,7 @@
     "async": "^0.9.0",
     "bunyan": "^1.2.3",
     "bunyan-prettystream": "git://github.com/mwaylabs/node-bunyan-prettystream",
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "cli-table": "^0.3.1",
     "cross-spawn": "^0.2.3",
     "debug": "2.1.0",
@@ -29,8 +29,6 @@
     "fstream-ignore": "git+https://github.com/mwaylabs/fstream-ignore.git#6d1f13afa0af781d41afe1f12f42845b2a51a915",
     "fullname": "^1.0.0",
     "generator-m": "^1.0.0",
-    "generator-m-server": "^0.1.0",
-    "generator-mcap": "^0.2.0",
     "gulp": "^3.8.8",
     "gulp-debug": "^1.0.1",
     "gulp-filter": "^1.0.2",
@@ -42,6 +40,7 @@
     "map-stream": "^0.1.0",
     "minimist": "^1.1.0",
     "node-formdata": "^0.1.8",
+    "node-uuid": "^1.4.1",
     "nopt": "^3.0.1",
     "opn": "^1.0.0",
     "progress-bar": "^0.1.1",
@@ -49,10 +48,12 @@
     "rc": "^0.4.0",
     "request": "^2.40.0",
     "should": "^4.1.0",
+    "stringify-object": "^1.0.1",
     "user-home": "^1.1.0",
     "verror": "^1.6.0",
     "yeoman-environment": "^1.1.1",
-    "yeoman-generator": "^0.17.7"
+    "yeoman-generator": "^0.18.10"
+
   },
   "devDependencies": {
     "chai": "^1.9.2",
@@ -77,7 +78,10 @@
     "sinon": "^1.11.1",
     "tap": "^0.4.11",
     "unzip": "^0.1.11",
-    "yeoman-generator": "^0.17.7"
+    "yeoman-generator": "^0.18.10"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
   },
   "scripts": {
     "coveralls": "gulp test && cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",

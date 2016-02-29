@@ -1,0 +1,8 @@
+{
+  "name": "<%= name %>",
+  "baseAlias": "<%= baseAlias %>",
+  "uuid": "<%= uuid %>",
+  "client": "<%= clientDocument %>",
+  "server": "<%= serverDocument %>",
+  "directoryIndex": <% if (directoryIndex) { %>true<% } %><% if (!directoryIndex) { %>false<% } %>
+}

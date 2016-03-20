@@ -1,12 +1,12 @@
 # mCAP CLI
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image] [![Coverage Status][coveralls-image]][coveralls-url]
 
-Commandline Interface to generate mCAP Applications
+Command-line Interface to generate mCAP Applications
 
 
 
 ## Install
-The following tools are Required plz read the installation instructions
+The following tools are required. Please read the installation instructions
 
 [git](http://git-scm.com/),
 [node, npm](https://docs.npmjs.com/getting-started/installing-node),
@@ -15,7 +15,7 @@ The following tools are Required plz read the installation instructions
 [sass](http://sass-lang.com/install)
 
 ```
-git clone -b master https://github.com/mwaylabs/mcap-cli
+git clone https://github.com/mwaylabs/mcap-cli
 cd mcap-cli
 npm link
 ```

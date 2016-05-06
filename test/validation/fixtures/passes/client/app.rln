@@ -1,0 +1,37 @@
+{
+    "name": "gulpapp",
+    "versionName": "0.1.0",
+    "versionCode": 1,
+    "package": "com.company.gulpapp",
+    "description": "My awesome app",
+    "keywords": ["business", "production", "company name"],
+    "mainPage": "index.html",
+    "defaultIcon": "img/defaultIcon.png",
+    "targets": {
+        "android": {
+            "key": "file.js",
+            "alias": "test",
+            "icons": {},
+            "splash": {}
+        },
+        "ios": {
+            "key": "file.p12",
+            "passphrase": "mySecretPwd",
+            "provisioning": "file.p12",
+            "icons": {},
+            "splash": {}
+        }
+    },
+    "plugins": [],
+    "developer": {
+        "name": "John Doe",
+        "company": "awesome Inc.",
+        "email": "jd@awesome.io",
+        "web": "http://www.mwaysolutions.com"
+    },
+    "copyright": {
+        "license": "The MIT License (MIT)",
+        "legal": "http://opensource.org/licenses/MIT"
+    },
+    "changelog": "changelog.txt"
+}

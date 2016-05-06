@@ -3,7 +3,7 @@
  */
 var sinon       = require('sinon');
 var inquirer    = require('inquirer');
-var mcaprc      = require('mcaprc');
+var mcaprc      = require('../../lib/rc');
 var _           = require('lodash');
 require('should');
 var serverRemove = require('../../lib/commands/server/remove.js');
